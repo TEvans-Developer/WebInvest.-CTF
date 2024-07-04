@@ -48,4 +48,124 @@ There are 88,862 packets being displayed in this PCAP, instead of manually searc
 <br><b>Answer:</b><i>Shijiazhuang</i>
 <hr>
 
+<h4>Question 3.</h4>
+<b>Identifying the exploited script allows security teams to understand exactly which vulnerability was used in the attack. This knowledge is critical for finding the appropriate patch or workaround to close the security gap and prevent future exploitation. Can you provide the vulnerable script name?</b>
+
+<h4>Approach</h4>
+We want to know how the threat actor exploited the system. This well help us understand vulnerabilites in the system and ways to mitigate them in the future. Being that there are a large number of packets being sent to the threat actors IP address we can assume they are making request from a server in our network. WireShark has a utility that allows us to analyze these request. We will take this approach for our analysis. 
+
+<h3>Steps</h3>
+
+<b>Step 1</b>
+Navigate to the <b>Statistics</b> tab on the top of WireShark and from there we will navigate to HTTP at the bottom.Hover over HTTP, the option to see <b> Request</b> will appear, click this option. 
+
+<br><b>Step 2</b>
+A list of all HTTP request made during the PCAP will show here. Below we observe multiple <i>search.php</i> request were made.
+<br><i><b>* search.php is a script that handles search functionality on a website which are common in SQL Injections*</i></b>
+<br>![WebHTTPRequest](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/9b0e379b-4405-4b15-977a-04bc9b70e4b5)
+
+<br><b>Answer:</b><i>search.php</i>
+<hr>
+
+<h4>Question 4.</h4>
+<b>Establishing the timeline of an attack, starting from the initial exploitation attempt, What's the complete request URI of the first SQLi attempt by the attacker?</b>
+
+<h4>Approach</h4>
+Understanding that a URI (Uniform Resource Identifier) is a string of characters used to identify a name or resource on the internet. "GET" request are a type of call that is made to servers to get information from the server. Taking into account of this information and some knowledge of SQL Injections that are made such as 1=1 we can utilize WireSharks filter options, Go to packet option and Packet Details section to find the time in which the threat actor made their fire SQL Injection request. 
+
+<h3>Steps</h3>
+
+<b>Step 1</b>
+In the filter bar we want to input are threat actors IP address with this syntax <b>ip.addr == 111.224.250.131</b>.
+
+<br><b>Step 2</b>
+At the top of WireShark we will see the <b>Go</b> tab. After clicking this tab we will click the <b>Go to packet</b> option which will allow for another filter to appear.This <b>Go to packet</b> allows us to enter specific strings we want to find within the packets of WireShark.We will enter a common SQL Injection <b>1=1</b> in this filter. 
+
+<br><b>Step 3</b>
+After the filters are inputed we can see frame 357 is highlighted with the threat actors IP address as the source.There is also a span of information that has the <b>1=1</b> within it. 
+
+<br><b>Step 4</b> 
+We can also navigate to the bottom left portion of our WireShark tool to see the packet details. In the packet details we will navigate to the bottom of the listed layers where it says <b>Hypertext Transfer Protocol</b>. HTTP expands and we will see a the "Get" request URI that was made with the search.php script including the SQL injection <b>1=1</b>
+
+<br>![WebURIAttempt](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/e52844c1-c76d-4ee8-99d9-8136874dfe9e)
+
+
+
+<br><b>Answer:</b><i>/search.php?search=book%20and%201=1;%20--%20-</i>
+<hr>
+
+<h4>Question 5.</h4>
+<b>Can you provide the complete request URI that was used to read the web server available databases?</b>
+
+<h4>Approach</h4>
+We want to find the threat actors successful attempt that was made. Knowing that code 200 is a "successful" code that is returned to the person(s) when making a request to a database and that a common database type such as <i>MySQL</i> is used we can use this information to better filter our searches for our analysis. 
+
+<h3>Steps</h3>
+
+<b>Step 1</b>
+In the filter bar we will input our threat actors ip address. We will then inlcude the "&&" operator which stands for "and", and appened "http.response.code == 200" to it. The entire filter should look something like this. 
+<br>
+<b>ip.addr == 111.224.250.131 && http.response.code == 200</b>
+
+<br><b>Step 2</b>
+We want to find the response of 200 that is correlated to the MySQL database. We will go to <b>Go> Go to packet</b> then enter "mysql" into the filter as a string. 
+
+<br><b>Step 3</b>
+After inputing our filters we will be able to navigate to the packet details in the HTTP layer to find  full URI request made. This finding is similar to that of the analysis in question 4. 
+
+<br><b>Step 4 </b>
+To dive a bit deeper we can 
+
+<br><b>Answer:</b><i></i>
+<hr>
+
+<h4>Question 6.</h4>
+<b></b>
+
+<h4>Approach</h4>
+
+<h3>Steps</h3>
+
+<b>Step 1</b>
+
+<br><b>Step 2</b>
+
+<br><b>Step 3</b>
+
+<br><b>Answer:</b><i></i>
+<hr>
+
+<h4>Question 7.</h4>
+<b></b>
+
+<h4>Approach</h4>
+
+<h3>Steps</h3>
+
+<b>Step 1</b>
+
+<br><b>Step 2</b>
+
+<br><b>Step 3</b>
+
+<br><b>Answer:</b><i></i>
+<hr>
+
+<h4>Question 8.</h4>
+<b></b>
+
+<h4>Approach</h4>
+
+<h3>Steps</h3>
+
+<b>Step 1</b>
+
+<br><b>Step 2</b>
+
+<br><b>Step 3</b>
+
+<br><b>Answer:</b><i></i>
+<hr>
+
+
 
