@@ -112,11 +112,15 @@ We want to find the response of 200 that is correlated to the MySQL database. We
 
 <br><b>Step 3</b>
 After inputing our filters we will be able to navigate to the packet details in the HTTP layer to find  full URI request made. This finding is similar to that of the analysis in question 4. 
+<br>![FullURI1](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/f85544cb-c22b-4f47-9ba9-42577f4f9228)
+
 
 <br><b>Step 4 </b>
-To dive a bit deeper we can 
+To dive a bit deeper we can get more context of the URI request by following the http stream. In order to do so we right click the highlighted packet in the packet list, navigate down to the follow option, then click the HTTP Stream. This will show us the TCP stream request and responses made between our server and the threat actor for this respected packet.
+![FullURI2](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/1c0ce75e-0981-4a8d-a76b-e6a4be79421c)
 
-<br><b>Answer:</b><i></i>
+
+<br><b>Answer:</b><i>/search.php?search=book%27%20UNION%20ALL%20SELECT%20NULL%2CCONCAT%280x7178766271%2CJSON_ARRAYAGG%28CONCAT_WS%280x7a76676a636b%2Cschema_name%29%29%2C0x7176706a71%29%20FROM%20INFORMATION_SCHEMA.SCHEMATA--%20-</i>
 <hr>
 
 <h4>Question 6.</h4>
