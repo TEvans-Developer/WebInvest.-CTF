@@ -1,5 +1,5 @@
 # WebInvestigation - CTF by CyberDefender
-<h1>WebInvestigation </h1> is a CTF within CyberDefender which allows hands-on practical experience for SOC Anaylst. 
+<h1>WebInvestigation</h1> WebInvestigation is a CTF within CyberDefender which offers hands-on practical experience for SOC Anaylst. 
 
 <br><h2>Scenario: </h2> 
 You are a cybersecurity analyst working in the Security Operations Center (SOC) of BookWorld, an expansive online bookstore renowned for its vast selection of literature. BookWorld prides itself on providing a seamless and secure shopping experience for book enthusiasts around the globe. Recently, you've been tasked with reinforcing the company's cybersecurity posture, monitoring network traffic, and ensuring that the digital environment remains safe from threats.
@@ -12,6 +12,10 @@ As the lead analyst on this case, you are required to analyze the network traffi
   -WireShark (Network Analysis and PCAP (Packet Capture)) 
   
   -NetworkMiner (Network Anaylsis)
+
+  -VM (Kali Linux)
+
+  -IP Lookup ( https://www.whatismyip.com/ip-address-lookup/ )
 
 <h4>Question 1.</h4> 
 <b>By knowing the attacker's IP, we can analyze all logs and actions related to that IP and determine the extent of the attack, the duration of the attack, and the techniques used. Can you provide the attacker's IP?</b>
