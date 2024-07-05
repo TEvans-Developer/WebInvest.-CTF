@@ -79,7 +79,7 @@ Understanding that a URI (Uniform Resource Identifier) is a string of characters
 In the filter bar we want to input are threat actors IP address with this syntax <b>ip.addr == 111.224.250.131</b>.
 
 <br><b>Step 2</b>
-At the top of WireShark we will see the <b>Edit</b> tab. After clicking this tab we will click the <b>Find Packet</b> option which will allow for another filter to appear.This <b>Find packet</b> allows us to enter specific strings we want to find within the packets of WireShark.We will enter a common SQL Injection <b>1=1</b> in this filter. 
+At the top of WireShark we will see the <b>Edit</b> tab. After clicking this tab we will click the <b>Find Packet</b> option which will allow for another filter to appear.This <b>Find Packet</b> allows us to enter specific strings we want to find within the packets of WireShark.We will enter a common SQL Injection <b>1=1</b> in this filter. 
 
 <br><b>Step 3</b>
 After the filters are inputed we can see frame 357 is highlighted with the threat actors IP address as the source.There is also a span of information that has the <b>1=1</b> within it. 
@@ -88,6 +88,8 @@ After the filters are inputed we can see frame 357 is highlighted with the threa
 We can also navigate to the bottom left portion of our WireShark tool to see the packet details. In the packet details we will navigate to the bottom of the listed layers where it says <b>Hypertext Transfer Protocol</b>. HTTP expands and we will see a the "Get" request URI that was made with the search.php script including the SQL injection <b>1=1</b>
 
 <br>![WebURIAttempt](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/e52844c1-c76d-4ee8-99d9-8136874dfe9e)
+
+<h3>Disregard the highlighted "Go" in screen shot</h3>
 
 
 
