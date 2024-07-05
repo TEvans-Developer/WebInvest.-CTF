@@ -176,33 +176,59 @@ We then can follow the HTTP stream to see in-depth more about the request and ho
 <b>Knowing which credentials were used allows us to determine the extent of account compromise. What's the credentials used by the attacker for logging in?</b>
 
 <h4>Approach</h4>
-Understand that
+Under that WireShark provide filtering methods that allow you to pin point and follow HTTP streams for request made to a server.Understand that a request to login into a system requires a POST request and if the request is successful the threat actor then has access to private data.
 
 <h3>Steps</h3>
 
 <b>Step 1</b>
+We should input into our display filter "http.request.method==POST" which will give us back 5 different POST request made by the threat actor in a brute force attempt to access the admin portal.
+<br>** (optional) - We can use Network Miner as it provide an option to see credentials** 
 
 <br><b>Step 2</b>
+Upon analysis and following the HTTP streamwe find that packet 88699 has information that the threat actor made an successful log in attempt due to a default login credential that was not removed from the system. 
+UserName:<i>admin</i> and password:<i>admin123!</i> 
 
-<br><b>Step 3</b>
+<br>![WebLoggedIn](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/44e1445f-8403-4e93-bcae-2895d4c4fa86)
 
-<br><b>Answer:</b><i></i>
+
+<br><b>Answer:</b><i>admin:admin123!</i>
 <hr>
 
-<h4>Question 8.</h4>
-<b></b>
+<h4>Question 9.</h4>
+<b>We need to determine if the attacker gained further access or control on our web server. What's the name of the malicious script uploaded by the attacker?</b>
 
 <h4>Approach</h4>
+We must understand that some malicious script was "uploaded" by the attacker to hel him exploit the same and find vulnerabilities. Due to common naming convictions using the keyword "upload" in WireShark could help us find what the malicious script was.
 
 <h3>Steps</h3>
 
 <b>Step 1</b>
+As done in the previous question we will input into our display filter "http.request.method == POST" with our Find Packet filter "upload" for packet details.
 
 <br><b>Step 2</b>
+From here we are able to see the filename of the malicious script that was uploaded in our packet details on lower left.
+<br>![WebScript](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/2749b3bc-111e-4982-82f3-945cad66cbc8)
 
-<br><b>Step 3</b>
 
-<br><b>Answer:</b><i></i>
+<br><b>Answer:</b><i>Nvri2vhp.php</i>
+
+<h2> Report</h2>
+<br> It seems that our threat actors purpose was to infiltrate the network to gain access to sensitive data and upload a malicious script.
+<h3>Tactics</h3>
+<br> Credential access , Exfiltration, Discovery
+<h3>Techniques</h3>
+<br>SQL Injection,Using Credentials,Brute Force,Exploiting unpatched vulnerabilities
+<h3>Procedure</h3>
+The threat actor was able to infiltrate sensitive user data by using SQL injections to reach the admin directory and customer database. Once inside the admin directory the threat actor used brute force to gain access to admin login due to default credential that  were not removed. The threat actor was then able to upload a malicious script called, <i>Nvei2vhp.php</i> which could further cause damages to the system, allow for lateral movement, cause DDOS, gain access to sensitive data and more.
+
+<h4> Ways to mitigate</h4>
+<br>- Better management of user credentials by removing default credentials and implementing MFA and other verification methods.
+<br>- Utilize least privilege policy.
+<br>- Implement better coding so that SQL injections are not possible by using parameterized queries, stored procedures, escape user input and etc.
+<br>- Implement IDS, IPS and SIEM for better monitoring and alerts.
+<br>- Implement Web Firewalls for SQL injections.
+<br>- Regular patches and network monitoring.
+
 
 
 
