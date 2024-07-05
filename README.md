@@ -89,7 +89,7 @@ We can also navigate to the bottom left portion of our WireShark tool to see the
 
 <br>![WebURIAttempt](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/e52844c1-c76d-4ee8-99d9-8136874dfe9e)
 
-<h3>Disregard the highlighted "Go" in screen shot</h3>
+<h3>**Disregard the highlighted "Go" in screen shot**</h3>
 
 
 
@@ -129,7 +129,7 @@ To dive a bit deeper we can get more context of the URI request by following the
 <b>Assessing the impact of the breach and data access is crucial, including the potential harm to the organization's reputation. What's the table name containing the website users data?</b>
 
 <h4>Approach</h4>
-We want to understand our data,how it is set up ,what potential user data that is vulnerable and what the threat actor can see. We could user NetworkMiner to assist with our analysis here. 
+We want to understand our data,how it is set up ,what potential user data that is vulnerable and what the threat actor can see. We could use NetworkMiner to assist with our analysis here. 
 
 <h3>Steps</h3>
 
@@ -139,10 +139,15 @@ We can open our PCAP in Network Miner. We then can click the files tab and input
 
 
 <br><b>Step 2</b>
+After find the port information we now can go back to WireShark and input the threat actors IP and the destination port in our display filter for further analysis. <b>ip.addr == 111.224.250.131 && tcp.dstport == 38848</b>
 
 <br><b>Step 3</b>
+We will then follow the HTTP Stream of frame 1624 to find our database <i>bookworld_db.customers</i>.
 
-<br><b>Answer:</b><i></i>
+<br>![WebUserDatabase](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/6be675b4-7a49-406f-8932-176103280cd6)
+
+
+<br><b>Answer:</b><i>customers</i>
 <hr>
 
 <h4>Question 7.</h4>
