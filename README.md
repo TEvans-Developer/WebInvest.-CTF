@@ -1,5 +1,5 @@
-# WebInvestigation - CTF by CyberDefender
-<h1>WebInvestigation</h1> WebInvestigation is a CTF within CyberDefender which offers hands-on practical experience for SOC Anaylst. 
+# WebInvestigation - Network Forensics CTF by CyberDefender
+<h1>WebInvestigation</h1> WebInvestigation is a Network Forensics CTF within CyberDefender which offers hands-on practical experience for SOC Anaylst. 
 
 <br><h2>Scenario: </h2> 
 You are a cybersecurity analyst working in the Security Operations Center (SOC) of BookWorld, an expansive online bookstore renowned for its vast selection of literature. BookWorld prides itself on providing a seamless and secure shopping experience for book enthusiasts around the globe. Recently, you've been tasked with reinforcing the company's cybersecurity posture, monitoring network traffic, and ensuring that the digital environment remains safe from threats.
