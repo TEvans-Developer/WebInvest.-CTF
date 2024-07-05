@@ -151,9 +151,32 @@ We will then follow the HTTP Stream of frame 1624 to find our database <i>bookwo
 <hr>
 
 <h4>Question 7.</h4>
-<b></b>
+<b>The website directories hidden from the public could serve as an unauthorized access point or contain sensitive functionalities not intended for public access. Can you provide name of the directory discovered by the attacker?</b>
 
 <h4>Approach</h4>
+We must understand that hidden directories are often source of information only visible to admin with certain privileges due the sensitive data and functionalitites. Using prior question we know that being able to follow http stream will help us see what request the threat actor made and which ones were successful as far as manipulating admin credentials to view private data.
+
+<h3>Steps</h3>
+
+<b>Step 1</b>
+In the display filter we should input our http response code of 200 and our Find packet filter should say "admin" as a string within our "packet details" to find all occurance where admin is mentioned.
+<br>![WebAdmin](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/56b0c85e-2f5c-40fd-971a-d6fad4467500)
+
+
+<br><b>Step 2</b>
+We then can follow the HTTP stream to see in-depth more about the request and how the threat actor go to the admin directory or simply go to packet detail on the lower left side of WireShark.  
+<br>![AdminFollow](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/e6c93f0d-bd14-40fa-b458-8c0a8f5e1aed)
+
+
+
+<br><b>Answer:</b><i>/admin/</i>
+<hr>
+
+<h4>Question 8.</h4>
+<b>Knowing which credentials were used allows us to determine the extent of account compromise. What's the credentials used by the attacker for logging in?</b>
+
+<h4>Approach</h4>
+Understand that
 
 <h3>Steps</h3>
 
@@ -180,7 +203,6 @@ We will then follow the HTTP Stream of frame 1624 to find our database <i>bookwo
 <br><b>Step 3</b>
 
 <br><b>Answer:</b><i></i>
-<hr>
 
 
 
