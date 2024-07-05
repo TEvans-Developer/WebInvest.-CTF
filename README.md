@@ -11,7 +11,7 @@ As the lead analyst on this case, you are required to analyze the network traffi
 <h3>Securirty tools used for this CTF and their purpose</h3> 
   -WireShark (Network Analysis and PCAP (Packet Capture)) 
   
-  -NetworkMiner (Network Anaylsis)
+  <br>-NetworkMiner (Network Anaylsis)
 
   -VM (Kali Linux)
 
