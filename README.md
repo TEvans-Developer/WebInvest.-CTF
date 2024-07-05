@@ -108,7 +108,7 @@ In the filter bar we will input our threat actors ip address. We will then inlcu
 <b>ip.addr == 111.224.250.131 && http.response.code == 200</b>
 
 <br><b>Step 2</b>
-We want to find the response of 200 that is correlated to the MySQL database. We will go to <b>Go> Go to packet</b> then enter "mysql" into the filter as a string. 
+We want to find the response of 200 that is correlated to the MySQL database. We will go to <b>Edit > Find </b> then enter "mysql" into the filter as a string. 
 
 <br><b>Step 3</b>
 After inputing our filters we will be able to navigate to the packet details in the HTTP layer to find  full URI request made. This finding is similar to that of the analysis in question 4. 
@@ -124,13 +124,17 @@ To dive a bit deeper we can get more context of the URI request by following the
 <hr>
 
 <h4>Question 6.</h4>
-<b></b>
+<b>Assessing the impact of the breach and data access is crucial, including the potential harm to the organization's reputation. What's the table name containing the website users data?</b>
 
 <h4>Approach</h4>
+We want to understand our data,how it is set up ,what potential user data that is vulnerable and what the threat actor can see. We could user NetworkMiner to assist with our analysis here. 
 
 <h3>Steps</h3>
 
 <b>Step 1</b>
+We can open our PCAP in Network Miner. We then can click the files tab and input "search.php" in our filter keyword in our Network Miner tool. Upon researching for unusually large files that were transfer we can see on frame 1622 that 1,125B of data were being transfer to the destination IP of our threat actor and ephermeral destination port <b>38848</b>. We can also see in the packet details that there are names of user and information in the packet bytes.
+<br>![WebUserDatabaseNetworkMiner](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/3b4a7aed-5b5f-4277-a4c5-26cd47e5b0b7)
+
 
 <br><b>Step 2</b>
 
