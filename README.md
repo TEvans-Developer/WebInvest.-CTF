@@ -216,7 +216,7 @@ From here we are able to see the filename of the malicious script that was uploa
 <h2> Report</h2>
 <br> It seems that our threat actors purpose was to infiltrate the network to gain access to sensitive data and upload a malicious script.
 <h3>Tactics</h3>
-<br> Credential access , Exfiltration, Discovery
+<br> Credential access, Exfiltration, Discovery
 <h3>Techniques</h3>
 <br>SQL Injection,Using Credentials,Brute Force,Exploiting unpatched vulnerabilities
 <h3>Procedure</h3>
