@@ -21,7 +21,7 @@ As the lead analyst on this case, you are required to analyze the network traffi
 <b>By knowing the attacker's IP, we can analyze all logs and actions related to that IP and determine the extent of the attack, the duration of the attack, and the techniques used. Can you provide the attacker's IP?</b>
 
 
-<br><h4>Approach:</h4> We are looking for the IP of the attacker. Wireshark is a great network analysis tool that provides packets showing both source and destination IP's traversing data throughout the network. In the scenario above we are provided with information that states,<i> "an automated alert is triggered by an unusual spike in database queries and server resource usage, indicating potential malicious activity."</i> Given this information we should begin looking for unusal amounts of packets coming to and/or from an IP address not within our network. 
+<br><h4>Approach:</h4> We are looking for the IP of the attacker. Wireshark is a great network analysis tool that provides packets showing both source and destination IP's traversing data throughout the network. In the scenario above we are provided with information that states,<i> "an automated alert is triggered by an unusual spike in database queries and server resource usage, indicating potential malicious activity".</i> Given this information we should begin looking for unusal amounts of packets coming to and/or from an IP address not within our network. 
 
 <h3>Steps</h3> 
 <b>Step 1</b>
