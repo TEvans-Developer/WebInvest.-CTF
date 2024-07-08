@@ -39,7 +39,7 @@ There are 88,862 packets being displayed in this PCAP, instead of manually searc
 <h4>Question 2.</h4>
 <b>If the geographical origin of an IP address is known to be from a region that has no business or expected traffic with our network, this can be an indicator of a targeted attack. Can you determine the origin city of the attacker?</b>
 
-<h4>Approach:</h4> We want to further ensure our suspicion that the anomaly is coming from a source that is <b>NOT</b> in our network and being that the IP is not in our network there is also a chance the IP address is not in our region. There are many open source IP address Lookups that allow us to see the region as well as other information about the potential threat actor. We will utilize https://www.whatismyip.com/ip-address-lookup/ for our research.
+<h4>Approach:</h4> We want to support our suspicion that the anomaly is coming from a source IP <i>(111.224.250.131)</i> which is <b>NOT</b> in our network. Being that the IP is not in our network there is also a chance the IP address is not in our region as well. There are many open source IP address Lookups tools that allow us to see the region as well as other information about the potential threat actor. We will utilize https://www.whatismyip.com/ip-address-lookup/ for our research.
 
 <h3>Steps</h3> 
 <b>Step 1</b> Visit https://www.whatismyip.com/ip-address-lookup/ or any <b>Secure</b> IP address Lookup website of your choice.
