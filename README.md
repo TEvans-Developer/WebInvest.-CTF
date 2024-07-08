@@ -30,7 +30,7 @@ After downloading the packet capture from CyberDefender and inputing the provide
 <br><b>Step 2</b>
 There are 88,862 packets being displayed in this PCAP, instead of manually searching for an anomally we can click on the <b>Statistics</b> tab at the top of our WireShark tool... from there, we naviagate to the <b>Conversation</b> tab (not pictured).![WebStatsTab](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/a498f17e-706b-416d-be8b-1ce334c0f5bc)
 
-<b>Step 3</b> In <b>Conversation</b> we will navigate to the IPv4 tab. We then can see there are 88,484 of our 88,862 PCAPs being sent from an IP address <i>111.224.250.131</i> in the <b>Address A</b> column to one of the IP addresses in our network. This unusual amount of network traffic could be a key indicator that this is the source of the anomaly. We will need further investigate to support our suspicion.![WebConversation](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/e88a2c57-cb48-42c3-946a-71195aa36706)
+<b>Step 3</b> In <b>Conversation</b> we will navigate to the IPv4 tab. We then can see there are 88,484 of our 88,862 PCAPs being sent from an IP address <i>111.224.250.131</i> in the <b>Address A</b> column to one of the IP addresses in our network. This unusual amount of network traffic could be a key indicator that this is the source of the anomaly. We will need to further investigate to support our suspicion.![WebConversation](https://github.com/TEvans-Developer/WebInvest.-CTF/assets/140648793/e88a2c57-cb48-42c3-946a-71195aa36706)
 
 
 <b>Answer:</b> <i>111.224.250.131</i>
